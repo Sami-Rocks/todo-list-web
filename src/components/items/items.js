@@ -5,17 +5,28 @@ import classes from './items.module.scss';
 const item = (props) =>{
     return(
         <div className={classes.Item}>
+            <h3>Todo List</h3>
             <table>
+                <thead>
                 <tr>
-                    <td className={classes.Text}>Item</td>
-                    <td>Completed</td>
-                    <td>Close</td>
+                    <th className={classes.HText}>List</th>
+                    <th>Status</th>
+                    <th>Close</th>
                 </tr>
-                <tr>
-                    <td className={classes.Text}>Item</td>
-                    <td>Completed</td>
-                    <td>Close</td>
-                </tr>
+                
+                </thead>
+                <tbody>
+                    <tr>
+                        <td className={classes.Text}>Item</td>
+                        <td>Completed</td>
+                        <td>Close</td>
+                    </tr>
+                    <tr>
+                        <td className={classes.Text}>Item</td>
+                        <td>Completed</td>
+                        <td>Close</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
