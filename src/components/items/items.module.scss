@@ -25,18 +25,22 @@ p{
         width: 100%;
         margin: 0 auto;
        background: #fff;
-       text-align: right;
+       text-align: center;
        border-radius: 10px;
+       padding: 0 0px;
+       border-collapse:collapse; 
     }
 
     .Text{
         text-align: left;
         padding: 20px;
         padding-left: 50px;
+        width: 45%;
     }
 
     .HText{
         text-align: left;
+        width: 45%;
     }
     
     table thead tr,
@@ -57,7 +61,7 @@ p{
         transition: all .3s ease;
         margin: 0;
         padding: 20px;
-        padding-right: 50px; 
+        
        
     }
     
@@ -68,15 +72,38 @@ p{
         vertical-align: bottom; 
         background: #F9F9F9;
         padding: 10px 50px;
+        text-align: center;
     }
     
     
-    table{
-        padding: 0 0px;
-        border-collapse:collapse; 
+
+
+    .Remove{
+        a{
+            color: #ED6A5A;
+            width: 60px;
+            box-shadow: 0 4px 8px 0 rgba(237, 106, 90, .4);
+            transition: 0.4s;
+           
+            
+            &:hover{
+               box-shadow: none;
+            }
+        }
     }
-    
-    // table tr:nth-child(even) {
-    //     background-color: rgba(88, 87, 87, 0.1); 
-    // }
+    .Status{
+        a{
+            text-decoration: none;
+            background: #9BC1BC;
+            border-radius: 4px;
+            padding: 4px 8px;
+            color: #fff;
+            box-shadow: 0 4px 8px 0 rgba(155, 193, 188, .4);
+            transition: 0.4s;
+            
+            &:hover{
+               box-shadow: none;
+            }
+        }
+    }
 }
