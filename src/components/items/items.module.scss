@@ -1,0 +1,63 @@
+h2{
+    margin: 10px 20px;
+    padding-top: 10px;
+    color: #6E7479;
+}
+p{
+    margin: 1px;
+    margin-left: 20px;
+    color: #C2C3C5;
+}
+
+.Item{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: space-between;
+
+    table{
+        border: none;
+        width: 90%;
+        margin: 0 auto;
+       background: #fff;
+    }
+
+    
+    table thead tr,
+    table tbody tr{
+        transition: all .3s ease;
+    }
+    
+    table thead tr th,
+    table thead tr td,
+    table tbody tr th,
+    table tbody tr td{
+        text-align: left;
+        padding: 10px 20px;
+        vertical-align: top;
+        border-left: 0;
+        transition: all .3s ease;
+        margin: 0;
+    
+    }
+    
+    table thead tr th{
+        margin: 0;
+        background: red;
+        font-weight: 400;
+        color: #fff;
+        vertical-align: bottom;
+        border-bottom: 1px solid red; 
+    }
+    
+    
+    table{
+        padding: 0;
+        border: 1px solid #EAEDF3;
+        border-collapse:collapse; 
+    }
+    
+    table tr:nth-child(even) {
+        background-color: rgba(230, 49, 77, .2); 
+    }
+}
