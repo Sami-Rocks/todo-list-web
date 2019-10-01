@@ -79,27 +79,30 @@ p{
 
 
     .Remove{
-        a{
+        button{
             color: #ED6A5A;
-            width: 60px;
+            width: fit-content;
+            padding: 0;
             box-shadow: 0 4px 8px 0 rgba(237, 106, 90, .4);
             transition: 0.4s;
-           
-            
+           background: transparent;
+           border: none;
+            cursor: pointer;
             &:hover{
                box-shadow: none;
             }
         }
     }
     .Status{
-        a{
+        button{
             text-decoration: none;
             background: #9BC1BC;
             border-radius: 4px;
-            padding: 4px 8px;
+            padding: 6px 16px;
             color: #fff;
             box-shadow: 0 4px 8px 0 rgba(155, 193, 188, .4);
             transition: 0.4s;
+            border: none;
             
             &:hover{
                box-shadow: none;
