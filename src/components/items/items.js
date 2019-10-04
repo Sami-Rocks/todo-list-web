@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import classes from './items.module.scss';
-import axios from 'axios'
+import axios from 'axios';
+import $ from 'jquery';
 
 class Item extends Component{
     
@@ -8,23 +9,24 @@ class Item extends Component{
         tasks: []
     }
 
-    getTasks(){
-        fetch(`https://isktodo.herokuapp.com/todos-api/todos/`)
-        .then(response => response.json())
-        .then(data => {
-          this.setState({
-              tasks: data
-          })
-        })
+    // getTasks(){
+    //     fetch('https://isktodo.herokuapp.com/todos-api/todos/')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //       this.setState({
+    //           tasks: data
+    //       })
+    //     })
+    // }
+    
+    
+    componentDidMount(){
+        $.getJSON( $.getJSON('https://isktodo.herokuapp.com/todos-api/todos/', (response) => {
+            this.setState({ tasks : response });
+        }))
     }
     
-    
-    componentDidMount() {
-        this.getTasks();
-        
-      }
-    
-      deleteTask(e, value){
+     deleteTask(e, value){
         fetch('https://isktodo.herokuapp.com/todos-api/todos/'+value, { 
         method: 'DELETE' 
         }); 
