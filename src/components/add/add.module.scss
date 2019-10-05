@@ -1,10 +1,11 @@
 .Form{
-    width: 90%;
+    width: 100%;
     height: 150px;
     background: #fff;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(91, 90, 90, 0.1);
+    margin-top: -10px;
 }
 
 form{
@@ -31,12 +32,16 @@ form{
      
      
    }
-   input[type="submit"]{
-    margin: 30px auto;
+  
+
+}
+
+.button{
+    margin: 10px auto;
     padding: 8px 8px;
     background: #ED6A5A;
     border: none;
-    width: 50%;
+    width: 30%;
     outline: none;
     color: #fff;
     cursor: pointer;
@@ -44,10 +49,10 @@ form{
     transition: 1s;
     box-shadow: 0 8px 16px 0 rgba(237, 106, 90, 0.5);
     font-size: 16px;
+  
+    margin-left: 35%;
 }
-input[type="submit"]:hover{
+button:hover{
     box-shadow: none;
     
-}
-
 }

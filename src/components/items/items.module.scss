@@ -9,14 +9,34 @@ p{
     color: #C2C3C5;
 }
 
-.Item{
 
+.Item{
+    background: #fff;
+    border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(91, 90, 90, 0.1);
     justify-content: space-between;
+    height: 400px;
+    overflow: auto;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+    
+      }
+    
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: rgb(220, 219, 219); 
+      }
+      
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(187, 187, 187); 
+      }
 
     h3{
         margin: 20px;
-        padding-top: 20px;
+        padding-top: 5px;
     }
 
     table{

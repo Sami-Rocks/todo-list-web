@@ -8,7 +8,7 @@ const container = (props)=>{
             <div className={classes.Container}>
                 <div className={classes.Top}>
                     <h1>TODO List</h1>
-                    <Add/>
+          
                     <List/>
                 </div>
             </div>
