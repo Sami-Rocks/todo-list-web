@@ -10,7 +10,8 @@ class Item extends Component{
             tasks: [],
             titleValue: ''
         }
-        this.addTask = this.addTask.bind(this)
+        this.addTask = this.addTask.bind(this);
+        this.updatedStatus = this.updatedStatus.bind(this);
     }
 
     getTasks(){
@@ -41,24 +42,48 @@ class Item extends Component{
 
     addTask(e){
         const titleValue = title.value;
-        const item = {'title': titleValue, 'completed': false};
-        fetch('https://isktodo.herokuapp.com/todos-api/todos/add', { 
-         method: 'POST',
-         headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-         body: JSON.stringify(item) 
-        });
-       
-        this.setState({
-             tasks: [...this.state.tasks, item]
-        });
-        console.log("it works");
-        console.log(this.state.tasks);
+        if(titleValue === ''){
+            alert('Please Enter a task.');
+        }else{
+
+            const item = {'title': titleValue, 'completed': false};
+            fetch('https://isktodo.herokuapp.com/todos-api/todos/add', { 
+             method: 'POST',
+             headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+             body: JSON.stringify(item) 
+            });
+           
+            this.setState({
+                 tasks: [...this.state.tasks, item]
+            });
+            console.log("it works");
+            console.log(this.state.tasks);
+            title.value = '';
+        }
     }
 
-    updatedStatus(e, id) {
+    updatedStatus(e, id, completed, title) {
+        if(completed === false){
+            var done = 'competed';
+            var tasks = [...this.state.tasks];
+            var index = tasks.findIndex(obj => obj.id === id);
+            tasks[index].completed = true;
+            this.setState({tasks});
+            console.log(tasks[index].completed, index, tasks);
+
+            const item = {'title': title, 'completed': true};
+            fetch('https://isktodo.herokuapp.com/todos-api/todos/'+id, { 
+                method: 'PUT',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                  },
+                 body: JSON.stringify(item)  
+         });
+        }
         
     }
 
@@ -99,7 +124,7 @@ class Item extends Component{
                         {this.state.tasks.map((task) => (
                             <tr key={task.id}>
                                 <td className={classes.Text}>{task.title}</td>
-                                <td className={classes.Status}><button onClick={(e) =>this.updatedStatus(e, task.id)}>{this.completion(task.completed)}</button></td> 
+                                <td className={classes.Status}><button onClick={(e) =>this.updatedStatus(e, task.id, task.completed, task.title)}>{this.completion(task.completed)}</button></td> 
                                 <td className={classes.Remove}><button onClick={(e) =>this.deleteTask(e, task.id)}><i className="fas fa-trash-alt"></i></button></td>
                             </tr>
                         ))}
