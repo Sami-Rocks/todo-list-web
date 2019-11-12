@@ -2,4 +2,4 @@
 
 Created with React
 
-check it out: `https://www.behance.net/samuelowusu-a`
+check it out: `http://isktest.herokuapp.com`
